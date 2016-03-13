@@ -17,10 +17,15 @@ defmodule Aggregator.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Aggregator do
-  #   pipe_through :api
-  # end
+
+
+#   Other scopes may use custom stacks.
+   scope "/api", Aggregator do
+     pipe_through :api
+     resources "/elements", ElementController, except: [:new, :edit]
+
+   end
 end
