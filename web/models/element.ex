@@ -10,8 +10,8 @@ defmodule Aggregator.Element do
     timestamps
   end
 
-  @required_fields ~w(name endpoint method payload)
-  @optional_fields ~w()
+  @required_fields ~w(name endpoint method)
+  @optional_fields ~w(payload)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
